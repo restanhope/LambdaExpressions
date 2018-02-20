@@ -82,28 +82,22 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            int a = Sum(5, 7);
-            Console.WriteLine("Result of Aggregate = {0}", a);
-            Console.WriteLine(a);
-            Console.ReadLine();
+          
+            Console.WriteLine(Aggregate(Sum, new List<int>()));
 
-            int Aggregate = Multiply(5, 7);
-            Console.WriteLine("Result of Aggregate = {0}", Aggregate);
-            Console.ReadLine();
+            Console.WriteLine(Aggregate(Multiply, new List<int>()));
 
-            //Console.WriteLine(Aggregate((p, q) => p + q, new List<int>()));
+            Console.WriteLine(Aggregate((p, q) => p + q, new List<int>()));
 
-            // Console.WriteLine(Aggregate((p, q) => p * q, new List<int>()));
+            Console.WriteLine(Aggregate((p, q) => p * q, new List<int>()));
 
-            int Select =  MakeDouble(5);
-            Console.WriteLine("Result of MakeDouble is {0}", Select);
+            Console.WriteLine(Select(MakeDouble, new List<int>()));
 
-            //int Select = Square(5);
-            //Console.WriteLine("Result of Square is {0}", Select);
+            Console.WriteLine(Select(Square, new List<int>()));
 
-            //Console.WriteLine(Select((k) => k * 2, new List<int>()));
+            Console.WriteLine(Select((k) => k * 2, new List<int>()));
 
-            //Console.WriteLine(Select((k) => k * k, new List<int>()));
+            Console.WriteLine(Select((k) => k * k, new List<int>()));
 
             ForEach<int>(x => Console.Write(x), _integers);
 
